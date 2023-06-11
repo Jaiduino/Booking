@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activites.Home_Screen">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+
+            android:layout_marginTop="10dp"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Co-Working">
+
+        </TextView>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:onClick="viewhistory"
+            android:text="@string/booking_history">
+
+        </Button>
+
+    </LinearLayout>
+<LinearLayout
+    android:layout_marginTop="100dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+
+    android:orientation="horizontal">
+    <LinearLayout
+        android:id="@+id/bookstation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+android:onClick="gotoworkstation"
+
+            android:src="@mipmap/working"
+            android:id="@+id/bookworkstationimg">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/Bookstationtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/bookworkstationimg"
+
+            android:layout_marginTop="10dp"
+            android:text="@string/book_work_n_station">
+
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/bookmeeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+android:onClick="gotomeeting"
+
+            android:src="@mipmap/meeting"
+            android:id="@+id/bookmeetingstationimg">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/Bookmeetingstationtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/bookworkstationimg"
+
+            android:layout_marginTop="10dp"
+            android:text="Meeting \n Room">
+
+        </TextView>
+    </LinearLayout>
+</LinearLayout>
+
+
+
+
+</LinearLayout>
