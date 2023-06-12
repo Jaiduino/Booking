@@ -52,7 +52,7 @@ public class BookingListActivity extends AppCompatActivity {
         new Retrofit.Builder().
                 addConverterFactory(GsonConverterFactory.create()).
                 baseUrl(urls.Log_In).build().
-                create(BookingServices.class).bookingList(1).
+                create(BookingServices.class).bookingList(id).
                 enqueue(new Callback<JsonObject>() {
                     @Override
                     public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {

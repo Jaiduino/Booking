@@ -32,7 +32,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class DeskWorkActivity extends AppCompatActivity {
     // private DayScrollDatePicker mPicker;
     RecyclerView recyclerView;
-    List<Slots> slotsList;
+    List<Slots> slotsLists;
     SlotListAdapter adapter;
 
     @Override
@@ -40,9 +40,10 @@ public class DeskWorkActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_desk_work);
         recyclerView = findViewById(R.id.workrecycleView);
-        slotsList = new ArrayList<>();
         getdata();
-        adapter = new SlotListAdapter(this, slotsList);
+        slotsLists = new ArrayList<>();
+
+        adapter = new SlotListAdapter(this, slotsLists);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this,1));
 
@@ -58,7 +59,7 @@ public class DeskWorkActivity extends AppCompatActivity {
 
     public void getdata() {
         //   int id = getid();
-        // Log.e("userid","inside_get_data"+id);
+         Log.e("desk","get_Data Call");
         new Retrofit.Builder().
                 addConverterFactory(GsonConverterFactory.create()).
                 baseUrl(urls.Log_In).build().
@@ -75,9 +76,11 @@ public class DeskWorkActivity extends AppCompatActivity {
                                 slots.setSlot_name(object.get("slot_name").getAsString());
                                 slots.setSlot_active(object.get("slot_active").getAsBoolean());
                                 slots.setSlot_id(object.get("slot_id").getAsInt());
-                                slotsList.add(slots);
+
+                                slotsLists.add(slots);
                             }
                             adapter.notifyDataSetChanged();
+                            Log.e("slots","Slots list"+slotsLists);
                         }
 
                     }

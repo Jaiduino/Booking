@@ -4,25 +4,15 @@
     android:layout_height="match_parent"
     android:layout_marginTop="50dp"
     android:orientation="vertical">
+
     <TextView
+        android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+
+        android:textSize="30dp"
         android:id="@+id/stationslotName">
 
     </TextView>
-  <RadioGroup
-      android:layout_marginTop="20dp"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/radiogroup">
-<RadioButton
-    android:id="@+id/rb1"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:checked="false"
-    android:text="Slot Available">
 
-</RadioButton>
-  </RadioGroup>
 </LinearLayout>

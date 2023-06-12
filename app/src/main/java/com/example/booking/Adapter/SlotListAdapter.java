@@ -1,6 +1,7 @@
 package com.example.booking.Adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,11 +34,14 @@ public class SlotListAdapter extends RecyclerView.Adapter<SlotListAdapter.MyView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-      Slots slots = new Slots();
+    public void onBindViewHolder(@NonNull SlotListAdapter.MyViewHolder holder, int position) {
+      Slots slots = slotsList.get(position);
       holder.viewTime.setText(slots.getSlot_name());
       if(slots.isSlot_active()==true){
-          holder.isAvailable.isChecked();
+          holder.viewTime.setBackgroundColor(Color.parseColor("#3c7ee8"));
+      }
+      else {
+          holder.viewTime.setBackgroundColor(Color.parseColor("#00000000"));
       }
 
     }
@@ -46,13 +50,13 @@ public class SlotListAdapter extends RecyclerView.Adapter<SlotListAdapter.MyView
     public int getItemCount() {
         return slotsList.size();
     }
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView viewTime;
-        RadioButton isAvailable;
+       // RadioButton isAvailable;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             viewTime = itemView.findViewById(R.id.stationslotName);
-            isAvailable = itemView.findViewById(R.id.rb1);
+           // isAvailable = itemView.findViewById(R.id.rb1);
         }
     }
 }
